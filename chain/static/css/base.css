@@ -1,0 +1,65 @@
+body{
+	background-color: whitesmoke;
+}
+
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ff8000;
+	width: 100%;
+	height: 6em;
+	border-bottom: 0.05em solid grey ;
+}
+	.logo{
+		margin-left: 30%;
+		display: inline-block;
+	}	.logo a{
+			text-decoration: none !important;
+
+		}
+		.title{
+			font-size: 2.3em;
+			font-family: 'Helvetica Neue', sans-serif;
+			color: whitesmoke;
+			
+		}
+		.raiblocks-icon{
+			position: absolute;
+			top: 1.2em;
+			left: 27%;
+		}
+	.searcher{
+		display: inline-block;
+		position: absolute;
+		right: 20%;
+		top: 2.3em;
+	}
+		#searcher-input{
+			border: 0;
+			padding: 0.5em;
+			border-radius: 0.2em;
+		}
+		.searcher input[type=submit]{
+			cursor: pointer;
+			border: 0;
+			padding: 0.4em;
+			border-radius: 0.2em;
+			transition: 100ms;
+		}.searcher input[type=submit]:hover{
+			background-color: lightgrey;
+		}
+
+main{
+	position: absolute;
+	top: 6.5em;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.error{
+	text-align: center;
+	color: #666666;
+	font-size: 3em;
+	font-family: sans-serif;
+}

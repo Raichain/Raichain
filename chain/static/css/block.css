@@ -1,0 +1,58 @@
+
+a{
+	text-decoration: none;
+
+}a:hover{
+	text-decoration: underline;
+}
+
+.block-info{
+	width: 80%;
+	margin-top: 2em;
+	position: absolute;
+	left: 10%;
+	
+}	#qr{
+		margin-left: 39.3%;
+		border: 0.5em solid #005c99;
+	}
+	.sent-amount{
+		font-size: 2.3em;
+		text-align: center;
+		font-family: sans-serif;
+		color: #002266;
+	}
+	.from-to{
+		text-align: center;
+		font-family: sans-serif;
+		color: #666666;
+	} .from-to a{
+		font-weight: normal;
+		color: #009973;
+	  }
+	.tec{
+		display: inline-block;
+		margin-top: 2em;
+		margin-left: 10%;
+		font-family: 'Arial', sans-serif;
+		font-size: 1.3em;
+	}
+		.tec tr{
+			background-color: #fff;
+		}
+		.tec th{
+			padding: 0.5em;
+			color: #666689;
+		}
+		.tec td{
+			padding: 0.5em;
+			color: grey;
+		}
+		.tec a{
+			color: #0073e6;
+		}
+
+.error{
+	text-align: center;
+	color: #666666;
+}

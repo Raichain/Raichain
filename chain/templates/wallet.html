@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link href="{% static 'css/wallet.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+{% if error %} 
+	<h2 class="error"> Wallet Not Found</h2>
+	<h2 class="error">:(</h2>
+{% else %}
+<div class="wallet-info">
+	<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=xrb:{{address}}">
+	<div class="sumary">	
+		<h3>Sumary</h3>
+		<table>
+			<tbody>
+				<tr>
+					<td class="s-title">Address: </td>
+					<td class="address">{{address}}</td>
+				</tr>
+				<tr>
+					<td class="s-title">Balance: </td>
+					<td><spam id="balance">{{balance}}</spam> xrb</td>
+				</tr>
+				<tr>
+					<td class="s-title">Block count: </td>
+					<td>{{blockcount}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="transactions">
+		<h3>Transactions </h3>
+		<table>
+			<thead>
+				<th>Type</th>
+				<th>Amount </th>
+				<th>Account </th>
+				<th>Block </th>
+			</thead>
+			<tbody>
+				<tr></tr>
+				{% for transaction in transactions %}
+				<tr>{% if transaction.type == "send" %}
+						<td style="color: red">{{transaction.type}}</td>
+				 	{% else %}
+				 		<td style="color: green">{{transaction.type}}</td>
+				 	{% endif %}
+					<td class="amount">{{transaction.amount}}</td>
+					<td><a href="/wallet?w={{transaction.account}}">{{transaction.account}}</a></td>
+					<td><a href="/block?b={{transaction.hash}}">{{transaction.hash}}</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block script %}
+<script>
+	let amounts = document.querySelectorAll('.amount');
+	amounts.forEach((amount) => {
+		amount.textContent = amount.textContent*10**-30;
+	});
+	getId('balance').textContent = getId('balance').textContent/10**6;
+</script>
+{% endblock %}
