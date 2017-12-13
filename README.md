@@ -14,7 +14,7 @@ $ pip3 install -r requirements.txt
 Download the Raiblocks Wallet for your currently Operational System [here](https://raiblocks.net/#getwallets).
 
 #### Wait for the wallet synchronizes with the entire blockchain
-**OBS:** for a faster download, you can download the blockchain for [x64](https://yadi.sk/d/fcZgyES73Jzj5T) and for [x86](https://yadi.sk/d/fa1oDDsT3JznEY) systems derectly from a server. Then, copy and paste "data.ldb" to the Raiblocks folder.)
+**OBS:** for a faster download, you can download the blockchain for [x64](https://yadi.sk/d/fcZgyES73Jzj5T) and for [x86](https://yadi.sk/d/fa1oDDsT3JznEY) systems directly from a server. Then, copy and paste "data.ldb" to the Raiblocks folder.
 
 Then, open the config.json file at Raiblocks folder and configure the RPC like this:
 ```json
