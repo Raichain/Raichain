@@ -7,17 +7,17 @@ function typeInput(){
 	let block_default = /^[A-Z]|[0-9]$/;
 
 	if(wallet_default.test(input.value)){
-		$('.searcher input[type=submit]').disabled = false;
+		$('.mdl-button').disabled = false;
 		$('.searcher').action = "/wallet";
 		input.name = "w";
 
 	}else if(block_default.test(input.value) && input.value.length == 64){
-		$('.searcher input[type=submit]').disabled = false;
+		$('.mdl-button').disabled = false;
 		$('.searcher').action = "/block";
 		input.name = "b";
 
 	}else{
-		$('.searcher input[type=submit]').disabled = true;
+		$('.mdl-button').disabled = true;
 		$('.searcher').action = "";
 		input.name = "";
 	}
