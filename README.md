@@ -1,5 +1,7 @@
 # Raichain
-
+![Raichain Page](https://i.imgur.com/gwsWQGS.png)
+## Introduction:
+RaiChain is a blockchain searcher for the cryptocurrency Raiblocks (XRB). 
 ## Requirements:
 
 ### 1. Download the Project:
