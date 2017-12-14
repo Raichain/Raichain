@@ -16,7 +16,7 @@ class Wallet:
 		self.blockCount = search.info['block_count']
 
 	def transactions(self):
-		command = '{ "action": "account_history", "account": "%s", "count": "10"}' %self.address
+		command = '{ "action": "account_history", "account": "%s", "count": "100"}' %self.address
 		transactions = SearchChain(command)
 		print(transactions.info)
 		return transactions.info['history']

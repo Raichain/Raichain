@@ -1,5 +1,6 @@
 from chain.model.chain import SearchChain 
 from chain.model.rai_raw import raw_rai
+import json
 
 class Block:
 
