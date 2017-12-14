@@ -1,13 +1,18 @@
+a{
+	text-decoration: none;
+}	a:hover{
+		text-decoration: underline;
+	}
+
 th, tr{
 	font-family: sans-serif;
 }
 .wallet-info{
 	margin-top: 4em;
-		margin-left: 0%;
-	}	
+}	
 		.qr{
 			position: absolute;
-			right: 15%;
+			right: 26%;
 			top: 7em;
 			border: 0.6em solid #005c99;
 		}
@@ -15,8 +20,10 @@ th, tr{
 	.sumary{
 		display: inline-block;
 		position: absolute;
-		left: 20%;
-	}
+		left: 25%;
+	}	.sumary a{
+			color: #009973;
+		}
 		.sumary h3{
 			color: #666666;
 			font-size: 1.6em;
@@ -34,7 +41,8 @@ th, tr{
 		display: inline-block;
 		position: absolute;
 		top: 24em;
-		left: 20%;
+		left: 14%;
+
 	}
 		.transactions h3{
 			color: #666666;
@@ -43,18 +51,21 @@ th, tr{
 			border-bottom: 0.1em solid grey;
 		}
 		.transactions th{
+			text-align: center;
+			font-size: 1.8em;
+
 			color: #666666;
 		}
 		.transactions tr{
 			background-color: #fdfdff;
 		}
 		.transactions td{
-			font-size: 0.7em;
+			font-size: 0.9em;
 			color: grey;		
-			padding: 0.5em;
+			
 			margin: 0;
+			text-align: left;
 		}
 		.transactions a{
-			color: grey;
-			text-decoration: none;
+			color: #0073e6;
 		}
