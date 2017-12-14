@@ -10,7 +10,7 @@ $ git clone https://github.com/Raichain/Raichain.git
  ```
 ### 2. Install python modules requirements:
 ```bash
-$ pip3 install -r requirements.txt
+# pip3 install -r requirements.txt
 ```
 ### 3. Download RaiBlocks Wallet and Configure RPC:
 Download the Raiblocks Wallet for your currently Operational System [here](https://raiblocks.net/#getwallets).
