@@ -35,7 +35,7 @@ Then, open the config.json file at Raiblocks folder and configure the RPC like t
 ```
 #### Restart your wallet.
 
-**Raiblocks File:**
+**Raiblocks Folder:**
 ```
 Windows: C:\Users\<user\AppData\Local\RaiBlocks\
 OSX: /Users/<user>/Library/RaiBlocks/
