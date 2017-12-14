@@ -4,7 +4,7 @@ function typeInput(){
 	let input = getId('searcher-input');
 
 	let wallet_default = /^xrb_/;
-	let block_default = /[A-Z]|[0-9]/;
+	let block_default = /[\b[0-9A-F]{64}\b/;
 
 	if(wallet_default.test(input.value)){
 		$('.mdl-button').disabled = false;
