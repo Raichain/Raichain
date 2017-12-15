@@ -19,7 +19,7 @@
 			<tbody>
 				<tr>
 					<td class="s-title">Address: </td>
-					<td class="address">{{address}}</td>
+					<td class="address"><a href="/wallet?w={{address}}">{{address}}</a></td>
 				</tr>
 				<tr>
 					<td class="s-title">Balance: </td>
@@ -34,27 +34,30 @@
 	</div>
 	<div class="transactions">
 		<h3>Transactions </h3>
-		<table>
-			<thead>
-				<th>Type</th>
+		
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		  <thead>
+		    <tr>
+		      	<th>Type</th>
 				<th>Amount </th>
 				<th>Account </th>
 				<th>Block </th>
-			</thead>
-			<tbody>
-				<tr></tr>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	
 				{% for transaction in transactions %}
 				<tr>{% if transaction.type == "send" %}
-						<td style="color: red">{{transaction.type}}</td>
+						<td class="mdl-data-table__cell" style="color: red">{{transaction.type}}</td>
 				 	{% else %}
-				 		<td style="color: green">{{transaction.type}}</td>
+				 		<td class="mdl-data-table__cell" style="color: green">{{transaction.type}}</td>
 				 	{% endif %}
-					<td class="amount">{{transaction.amount}}</td>
-					<td><a href="/wallet?w={{transaction.account}}">{{transaction.account}}</a></td>
-					<td><a href="/block?b={{transaction.hash}}">{{transaction.hash}}</a></td>
+					<td class="mdl-data-table__cell amount">{{transaction.amount}}</td>
+					<td class="mdl-data-table__cell"><a href="/wallet?w={{transaction.account}}">{{transaction.account}}</a></td>
+					<td class="mdl-data-table__cell"><a href="/block?b={{transaction.hash}}">{{transaction.hash}}</a></td>
 				</tr>
 				{% endfor %}
-			</tbody>
+		  </tbody>
 		</table>
 	</div>
 </div>

@@ -1,3 +1,8 @@
+.lk-logo{
+    text-decoration: none;
+}   .lk-logo:hover{
+        text-decoration: none;
+    }
 .lk-logo {
     outline: none;
     color: inherit;

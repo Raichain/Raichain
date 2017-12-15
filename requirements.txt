@@ -1,3 +1,2 @@
 django==2.0
-pycurl
-
+requests

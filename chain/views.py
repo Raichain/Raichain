@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from chain.model.wallet_info import *
 from chain.model.block_info import *
+from chain.model.peers import *
 from django.shortcuts import render
 import json
 
@@ -21,5 +22,19 @@ def block(request):
 	block_hash = request.GET.get('b')
 	block = Block(block_hash)
 	b = json.loads(block.get_info()['contents'])
+	account = block.account
+	block2 = ''
+	b2 = ''
+	isReceivedOrSent = ''
+	if b["type"] == "receive" or b["type"] == "open":
+		blocks = Block(b['source'])
+		b2 = json.loads(blocks.get_info()['contents'])
+		account	= blocks.account
 
-	return render(request, 'block.html', {'binfo':b, 'block_hash':block_hash, 'account':block.account})
+	return render(request, 'block.html', {'binfo':b, 'block_hash':block_hash, 'account':account, 'block2':b2})
+
+
+
+def peers(request):
+	peers = get_peers()['peers']
+	return render(request, 'peers.html', {'peers':peers})

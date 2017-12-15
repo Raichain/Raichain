@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load replace %}
+
+
+{% block css %}
+<link href="{% static 'css/peers.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+	
+<table class="mdl-data-table mdl-shadow--2dp peers-list">
+	  <thead>
+		    <tr>
+			    <th id="ip">Peers</th>
+		    </tr>
+	  </thead>
+	  <tbody>
+	  		<tr></tr>
+	  	{% for peer in peers %}
+		    <tr>
+		    	<td>{{peer|to_and}}</td>
+		    </tr>
+		{% endfor %}
+	  </tbody>
+</table>
+
+{% endblock %}
