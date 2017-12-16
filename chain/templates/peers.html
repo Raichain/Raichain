@@ -8,21 +8,20 @@
 {% endblock %}
 
 {% block main %}
-	
-<table class="mdl-data-table mdl-shadow--2dp peers-list">
-	  <thead>
+<div class="peers-list">
+	<table class="mdl-data-table mdl-js-data-table">
+		<thead>
 		    <tr>
-			    <th id="ip">Peers</th>
+			    <th><h4>Peers</h4></th>
 		    </tr>
-	  </thead>
-	  <tbody>
-	  		<tr></tr>
-	  	{% for peer in peers %}
+		</thead>
+		<tbody>
+			{% for peer in peers %}
 		    <tr>
 		    	<td>{{peer|to_and}}</td>
 		    </tr>
 		{% endfor %}
-	  </tbody>
-</table>
-
+		</tbody>
+	</table>
+</div>
 {% endblock %}

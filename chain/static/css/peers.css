@@ -1,18 +1,3 @@
 
-.peers-list{
-	margin: 0 auto;
-	font-size: 2em;
-	width: 30%;
-}	
-	#ip{
-		text-align: center;
-	}
-	.peers-list th{
-		font-size: 1.5em;
-
-	}
-	.peers-list td{
-		text-align: center;
-		font-size: 0.5em;
-		color: green;
-	}
+.peers-list{margin: 2em;}
+.peers-list td, .peers-list th {text-align: center;}

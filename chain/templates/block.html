@@ -9,100 +9,99 @@
 {% block main %}
 {% if binfo.type == "send" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
-	<h2 class="sent-amount">Sent 0.235 XRB</h2>
-	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
-	<h3 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{binfo.destination}}</a></h3>
-	<div class="tec">
-		<table>
-			<tbody>
-				<tr>
-					<th>Block</th>
-					<td>{{block_hash}}</td>
-				<tr>
-				<tr>
-					<th>Type</th>
-					<td>{{binfo.type}}</td>
-				<tr>
-				<tr>
-					<th>Destination</th>
-					<td><a href="/wallet?w={{binfo.destination}}">{{binfo.destination}}</a></td>
-				</tr>
-				<tr>
-					<th>Work</th>
-					<td>{{binfo.work}}</td>
-				</tr>
-				<tr>
-					<th>Signature</th>
-					<td style="font-size: 0.55em">{{binfo.signature}}</td>
-				</tr>
-			</tbody>
-		</table>
+	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{block_hash}}">
+	<h4 class="sent-amount">Sent 0.235 XRB</h4>
+	<h5 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h5>
+	<h5 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{binfo.destination}}</a></h5>
+
+	<table class="mdl-data-table mdl-js-data-table">
+		<tbody>
+			<tr>
+				<th>Block</th>
+				<td>{{block_hash}}</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>{{binfo.type}}</td>
+			</tr>
+			<tr>
+				<th>Destination</th>
+				<td><a href="/wallet?w={{binfo.destination}}">{{binfo.destination}}</a></td>
+			</tr>
+			<tr>
+				<th>Work</th>
+				<td>{{binfo.work}}</td>
+			</tr>
+			<tr>
+				<th>Signature</th>
+				<td style="font-size: 0.55em">{{binfo.signature}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 {% elif binfo.type == "receive" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
-	<h2 class="sent-amount">Received 0.235 XRB</h2>
-	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
-	<h3 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{block2.destination}}</a></h3>
-	<div class="tec">
-		<table>
-			<tbody>
-				<tr>
-					<th>Block</th>
-					<td>{{block_hash}}</td>
-				<tr>
-				<tr>
-					<th>Type</th>
-					<td>{{binfo.type}}</td>
-				<tr>
-				<tr>
-					<th>Destination</th>
-					<td><a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></td>
-				</tr>
-				<tr>
-					<th>Work</th>
-					<td>{{binfo.work}}</td>
-				</tr>
-				<tr>
-					<th>Signature</th>
-					<td style="font-size: 0.55em">{{binfo.signature}}</td>
-				</tr>
-			</tbody>
-		</table>	
-	</div>
+	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{block_hash}}">
+	<h4 class="sent-amount">Received 0.235 XRB</h4>
+	<h5 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h5>
+	<h5 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{block2.destination}}</a></h5>
+	
+	<table class="mdl-data-table mdl-js-data-table">
+		<tbody>
+			<tr>
+				<th>Block</th>
+				<td>{{block_hash}}</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>{{binfo.type}}</td>
+			</tr>
+			<tr>
+				<th>Destination</th>
+				<td><a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></td>
+			</tr>
+			<tr>
+				<th>Work</th>
+				<td>{{binfo.work}}</td>
+			</tr>
+			<tr>
+				<th>Signature</th>
+				<td style="font-size: 0.55em">{{binfo.signature}}</td>
+			</tr>
+		</tbody>
+	</table>	
 </div>
 {% elif binfo.type == "open" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
-	<h2 class="sent-amount">{{isReceivedOrSent}} 0.235 XRB</h2>
-	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
-	<h3 class="from-to">To <a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></h3>
-	<div class="tec">
-		<table>
-			<tbody>
-				<tr>
-					<th>Block</th>
-					<td>{{block_hash}}</td>
-				<tr>
-				<tr>
-					<th>Type</th>
-					<td>{{binfo.type}}</td>
-				<tr>
-				<tr>
-					<th>Destination</th>
-					<td><a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></td>
-				</tr>
-				<tr>
-					<th>Work</th>
-					<td>{{binfo.work}}</td>
-				</tr>
-				<tr>
-					<th>Signature</th>
-					<td style="font-size: 0.55em">{{binfo.signature}}</td>
-				</tr>
-			</tbody>
-		</table>	
-	</div>
+	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{block_hash}}">
+	<h4 class="sent-amount">{{isReceivedOrSent}} 0.235 XRB</h4>
+	<h5 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h5>
+	<h5 class="from-to">To <a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></h5>
+
+	<table class="mdl-data-table mdl-js-data-table">
+		<tbody>
+			<tr>
+				<th>Block</th>
+				<td>{{block_hash}}</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>{{binfo.type}}</td>
+			</tr>
+			<tr>
+				<th>Destination</th>
+				<td><a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></td>
+			</tr>
+			<tr>
+				<th>Work</th>
+				<td>{{binfo.work}}</td>
+			</tr>
+			<tr>
+				<th>Signature</th>
+				<td style="font-size: 0.55em">{{binfo.signature}}</td>
+			</tr>
+		</tbody>
+	</table>	
 </div>
 {% endif %}
 
