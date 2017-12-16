@@ -12,49 +12,45 @@
 	<h2 class="error">:(</h2>
 {% else %}
 <div class="wallet-info">
-	<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=xrb:{{address}}">
 	<div class="sumary">	
 		<h3>Sumary</h3>
-		<table>
+		<table class="mdl-data-table mdl-js-data-table">
 			<tbody>
 				<tr>
-					<td class="s-title">Address: </td>
-					<td class="address"><a href="/wallet?w={{address}}">{{address}}</a></td>
+					<th rowspan="3"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=xrb:{{address}}"></th>
+					<td>Address: <a href="/wallet?w={{address}}"> {{address}} </a></td>
 				</tr>
 				<tr>
-					<td class="s-title">Balance: </td>
-					<td><spam id="balance">{{balance}}</spam> xrb</td>
+					<td>Balance: <spam id="balance"> {{balance}} </spam> xrb</td>
 				</tr>
 				<tr>
-					<td class="s-title">Block count: </td>
-					<td>{{blockcount}}</td>
+					<td>Block count: {{blockcount}}</td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<div class="transactions">
+
 		<h3>Transactions </h3>
 		
-		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		<table class="mdl-data-table mdl-js-data-table">
 		  <thead>
 		    <tr>
 		      	<th>Type</th>
 				<th>Amount </th>
-				<th>Account </th>
-				<th>Block </th>
+				<th>Account/Block</th>
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	
 				{% for transaction in transactions %}
 				<tr>{% if transaction.type == "send" %}
-						<td class="mdl-data-table__cell" style="color: red">{{transaction.type}}</td>
+					<td class="mdl-data-table__cell" style="color: red">{{transaction.type}}</td>
 				 	{% else %}
-				 		<td class="mdl-data-table__cell" style="color: green">{{transaction.type}}</td>
+				 	<td class="mdl-data-table__cell" style="color: green">{{transaction.type}}</td>
 				 	{% endif %}
 					<td class="mdl-data-table__cell amount">{{transaction.amount}}</td>
-					<td class="mdl-data-table__cell"><a href="/wallet?w={{transaction.account}}">{{transaction.account}}</a></td>
-					<td class="mdl-data-table__cell"><a href="/block?b={{transaction.hash}}">{{transaction.hash}}</a></td>
+					<td class="mdl-data-table__cell">
+						<a href="/wallet?w={{transaction.account}}">{{transaction.account}}	</a><br/>
+						<a href="/block?b={{transaction.hash}}">{{transaction.hash}}</a>
+					</td>
 				</tr>
 				{% endfor %}
 		  </tbody>
