@@ -16,7 +16,7 @@ def wallet(request):
 		return render(request, 'wallet.html', {'error':wallet.error})	
 	else:
 		transactions = wallet.transactions()
-		return render(request, 'wallet.html', {'address':address, 'balance':wallet.balance, 'blockcount':wallet.blockCount, 'transactions':transactions})
+		return render(request, 'wallet.html', {'address':address, 'balance':wallet.balance, 'blockcount':wallet.blockCount, 'transactions':transactions, 'representative':wallet.representativeBlock})
 
 def block(request):
 	block_hash = request.GET.get('b')

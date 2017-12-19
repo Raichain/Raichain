@@ -33,6 +33,7 @@ th, tr{
 		.s-title{
 			font-size: 1.1em;
 			color: #666666;
+			text-align: left;
 		}
 		.address{
 			font-size: 0.9em;
@@ -42,8 +43,12 @@ th, tr{
 		position: absolute;
 		top: 24em;
 		left: 16%;
-
 	}
+		.transactions-table{
+			padding-right: 0.4em;
+			height: 30em;
+			overflow-y: scroll;
+		}
 		.transactions h3{
 			color: #666666;
 			font-size: 1.6em;
