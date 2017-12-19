@@ -36,5 +36,9 @@ def block(request):
 
 
 def peers(request):
-	peers = get_peers()['peers']
+	ips = get_peers()['peers']
+	peers = []
+	for ip in ips:
+		ip = ip.replace('[::ffff:', '').replace(']', '')
+		peers.append(withoutPort(ip)) 
 	return render(request, 'peers.html', {'peers':peers})

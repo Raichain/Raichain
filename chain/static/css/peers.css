@@ -1,8 +1,8 @@
 
 .peers-list{
-	margin: 0 auto;
 	font-size: 2em;
 	width: 30%;
+	margin: 0 auto;
 }	
 	#ip{
 		text-align: center;
@@ -14,5 +14,10 @@
 	.peers-list td{
 		text-align: center;
 		font-size: 0.5em;
-		color: green;
+		font-size: 0.8em;
+	}.peers-list td a{
+		color: #009973;
+		text-decoration: none;
+	}.peers-list td a:hover{
+		text-decoration: underline;
 	}

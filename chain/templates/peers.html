@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load replace %}
 
 
 {% block css %}
@@ -19,7 +18,8 @@
 	  		<tr></tr>
 	  	{% for peer in peers %}
 		    <tr>
-		    	<td>{{peer|to_and}}</td>
+		    	<td><a href="https://whatismyipaddress.com/ip/{{peer}}" target="_blank">{{peer}}</a></td>
+		    	
 		    </tr>
 		{% endfor %}
 	  </tbody>

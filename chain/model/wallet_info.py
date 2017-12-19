@@ -18,7 +18,6 @@ class Wallet:
 	def transactions(self):
 		command = '{ "action": "account_history", "account": "%s", "count": "100"}' %self.address
 		transactions = SearchChain(command)
-		print(transactions.info)
 		return transactions.info['history']
 
 	
