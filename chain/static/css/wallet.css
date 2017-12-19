@@ -12,8 +12,9 @@ th, tr{
 }	
 		.qr{
 			position: absolute;
-			right: 26%;
+			right: 25%;
 			top: 7em;
+			padding: 0.2em;
 			border: 0.6em solid #005c99;
 		}
 

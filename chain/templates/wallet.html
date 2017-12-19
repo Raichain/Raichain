@@ -12,7 +12,7 @@
 	<h2 class="error">:(</h2>
 {% else %}
 <div class="wallet-info">
-	<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=xrb:{{address}}">
+	<div id="qr" class="qr"></div>
 	<div class="sumary">	
 		<h3>Sumary</h3>
 		<table>
@@ -70,11 +70,20 @@
 {% endblock %}
 
 {% block script %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/qrcode.min.js' %}"></script>
 <script>
 	let amounts = document.querySelectorAll('.amount');
 	amounts.forEach((amount) => {
 		amount.textContent = amount.textContent*10**-30;
 	});
 	getId('balance').textContent = getId('balance').textContent/10**6;
+</script>
+<script>
+	new QRCode(getId('qr'), {
+		text: 'xrb:{{address}}',
+		width: 250,
+		height: 250
+	});
 </script>
 {% endblock %}

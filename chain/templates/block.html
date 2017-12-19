@@ -9,7 +9,7 @@
 {% block main %}
 {% if binfo.type == "send" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
+	<div id="qr"></div>
 	<h2 class="sent-amount">Sent 0.235 XRB</h2>
 	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
 	<h3 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{binfo.destination}}</a></h3>
@@ -40,7 +40,7 @@
 		</table>
 {% elif binfo.type == "receive" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
+	<div id="qr"></div>
 	<h2 class="sent-amount">Received 0.235 XRB</h2>
 	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
 	<h3 class="from-to">To <a href="/wallet?w={{binfo.destination}}">{{block2.destination}}</a></h3>
@@ -73,7 +73,7 @@
 </div>
 {% elif binfo.type == "open" %}
 <div class="block-info">
-	<img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{block_hash}}">
+	<div id="qr"></div>
 	<h2 class="sent-amount">{{isReceivedOrSent}} 0.235 XRB</h2>
 	<h3 class="from-to">From <a href="/wallet?w={{account}}">{{account}}</a></h3>
 	<h3 class="from-to">To <a href="/wallet?w={{block2.destination}}">{{block2.destination}}</a></h3>
@@ -106,4 +106,16 @@
 </div>
 {% endif %}
 
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/qrcode.min.js' %}"></script>
+<script>
+	new QRCode(getId('qr'), {
+		text: '{{block_hash}}',
+		width: 250,
+		height: 250
+	});
+</script>
 {% endblock %}
