@@ -1,7 +1,7 @@
 # Raichain
 ![Raichain Page](https://i.imgur.com/gwsWQGS.png)
 ## Introduction:
-RaiChain is a blockchain searcher for the cryptocurrency Raiblocks (XRB). 
+RaiChain is a blockchain searcher for the cryptocurrency Raiblocks (XRB).
 ## Requirements:
 
 ### 1. Download the Project:
@@ -44,4 +44,12 @@ OSX: /Users/<user>/Library/RaiBlocks/
 Linux: /home/<user>/RaiBlocks/
 ```
 
-
+### 4. Start Python Server:
+you should make sure that your wallet is synchronized and installed on your computer for a better experience with the project interface, as it depends on the portfolio
+```bash
+# python3 manage.py runserver
+```
+### 5. Acess Page Project
+```https
+http://127.0.0.1:8000
+```
